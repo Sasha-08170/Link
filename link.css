@@ -1,0 +1,68 @@
+/* === БАЗОВЫЕ ССЫЛКИ === */
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  position: relative;
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  color: #00bcd4;                
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease,
+    letter-spacing 0.2s ease;
+}
+
+/* 1. Стандартное и посещённое состояние */
+a:link,
+a:visited {
+  color: #00bcd4;
+}
+
+/* 2. Наведение — смена оттенка и подчёркивание */
+a:hover {
+  color: #0097a7;
+  letter-spacing: 0.2px;
+  transform: translateY(-1px);
+  outline: none;
+  border: none;
+}
+
+/* 3. Фокус (для клавиатурной навигации) */
+a:focus {
+  outline: 1px solid #00bcd4;
+  outline-offset: 3px;
+  border-radius: 3px;
+  border: none;
+}
+
+/* 4. Активное состояние (при нажатии) */
+a:active {
+  color: #007c91;
+  transform: scale(0.97);
+  outline: none;
+  border: none;
+}
+
+/* 5. Псевдоэлемент — плавное подчеркивание при hover */
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
